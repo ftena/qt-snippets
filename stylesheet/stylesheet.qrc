@@ -1,0 +1,12 @@
+<RCC>
+<qresource prefix="/">
+    <file>qss/blue.qss</file>
+    <file>qss/cool.qss</file>
+    <file>qss/cool_v2.qss</file>
+    <file>qss/transparent.qss</file>
+    <file>qss/stack.qss</file>
+</qresource>
+   <qresource prefix="/">
+      <file alias="icon">images/icon.png</file>
+   </qresource>
+</RCC>

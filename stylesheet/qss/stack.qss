@@ -1,0 +1,38 @@
+* {
+background-color: black;
+color: white;
+font: 24px;
+}
+
+QPushButton:disabled {
+background-color: rgb(67, 67, 67);
+border-color: rgb(67, 67, 67);
+}
+
+QPushButton {
+color: black;
+background-color: yellow;
+
+border-width: 1px;
+border-color: yellow;
+border-style: solid;
+border-radius: 10px;
+min-width: 3em;
+min-height: 30px;
+padding: 6px;
+}
+
+QPushButton:pressed {
+background-color: rgb(255, 193, 0);
+border-color: rgb(255, 193, 0);
+text-decoration: underline;
+}
+
+QPushButton:hover {
+border-color: rgb(255, 193, 0);
+}
+
+
+QPushButton:default {
+background-color: rgb(255, 255, 255);
+}
