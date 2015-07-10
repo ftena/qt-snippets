@@ -1,0 +1,3 @@
+#pushButton {
+    border-image: url(":/icon") ;
+}

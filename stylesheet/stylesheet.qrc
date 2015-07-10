@@ -6,6 +6,7 @@
     <file>qss/transparent.qss</file>
     <file>qss/stack.qss</file>
     <file>qss/pushbutton_image_centered.qss</file>
+    <file>qss/pushbutton_border_image.qss</file>
 </qresource>
    <qresource prefix="/">
       <file alias="icon">images/icon.png</file>

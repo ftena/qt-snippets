@@ -62,6 +62,11 @@
         <string>pushbutton_image_centered</string>
        </property>
       </item>
+      <item>
+       <property name="text">
+        <string>pushbutton_border_image</string>
+       </property>
+      </item>
      </widget>
     </item>
     <item>
