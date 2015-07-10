@@ -1,0 +1,5 @@
+#pushButton {
+    background-position: center;
+    background-image: url(":/icon") ;
+    background-repeat: no-repeat;
+}
