@@ -1,0 +1,7 @@
+<RCC>
+  <qresource>
+    <file alias="myapp_en">translations/myapp_en.qm</file>
+    <file alias="myapp_es">translations/myapp_es.qm</file>
+  </qresource>
+</RCC>
+
