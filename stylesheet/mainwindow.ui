@@ -67,6 +67,11 @@
         <string>pushbutton_border_image</string>
        </property>
       </item>
+      <item>
+       <property name="text">
+        <string>main_window_background</string>
+       </property>
+      </item>
      </widget>
     </item>
     <item>
