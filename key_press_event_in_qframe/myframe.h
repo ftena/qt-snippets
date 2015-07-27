@@ -9,6 +9,7 @@ class MyFrame : public QFrame
 
 public:
     MyFrame();
+    bool eventFilter(QObject *object, QEvent *event);
 
 protected:
     void keyPressEvent(QKeyEvent *event);
