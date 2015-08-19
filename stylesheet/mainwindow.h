@@ -14,6 +14,9 @@ public:
 
     Ui::MainWindow ui;
 
+private:
+    bool eventFilter(QObject * object, QEvent * event);
+
 private slots:
     void loadStyleSheet(const QString &sheetName);
 };
