@@ -119,8 +119,31 @@
          <rect>
           <x>10</x>
           <y>150</y>
-          <width>361</width>
-          <height>171</height>
+          <width>360</width>
+          <height>60</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>230</y>
+          <width>360</width>
+          <height>60</height>
+         </rect>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>310</y>
+          <width>360</width>
+          <height>20</height>
          </rect>
         </property>
        </widget>
