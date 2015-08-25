@@ -39,13 +39,18 @@ QTabBar::tab:!selected {
     margin-top: 2px; /* make non-selected tabs look smaller */
 }
 
-QTextEdit {
+#textEdit {
     color: red;
     background-color: grey;
 }
 
-QLineEdit:focus {
+#lineEdit:focus {
     color: red;
+    background-color: grey;
+}
+
+#plainTextEdit_2 {
+    color: blue;
     background-color: grey;
 }
 

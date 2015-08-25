@@ -38,6 +38,14 @@ QTabBar::tab:!selected {
     margin-top: 2px; /* make non-selected tabs look smaller */
 }
 
+#textEdit {
+    color: red;
+}
+
+#lineEdit:focus {
+    color: red;
+}
+
 #pushButton {
 	border: none;
 	background-color: #eeeeee;
