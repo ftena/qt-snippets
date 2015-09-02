@@ -1,2 +1,2 @@
 # qt-snippets
-Code snippets for Qt
+Code snippets for Qt and QML.
