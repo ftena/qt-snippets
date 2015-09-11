@@ -8,26 +8,37 @@ ApplicationWindow {
     height: 480
     visible: true
 
-    Rectangle {
-        width: 320
-        height: 240
-        color: "green"
+    Flickable {
+        width: 200; height: 200
+        contentWidth: image.width
+        contentHeight: image.height
+        clip: true
 
-        MouseArea {
-            anchors.fill: parent
-            acceptedButtons: Qt.LeftButton | Qt.RightButton
+        onMovementEnded: {
+            mousearea.cursorShape = Qt.OpenHandCursor
+            console.log("onMovementEnded")
+        }
 
-            onPressed: {
-              cursorShape = Qt.ClosedHandCursor
-              console.log("closed")
+        Image {
+            id: image;
+            source: "images/icon.png"
+
+            MouseArea {
+                id: mousearea
+                anchors.fill: parent
+
+                onPressed: {
+                    cursorShape = Qt.ClosedHandCursor
+                    console.log("closed")
+                }
+
+                onReleased: {
+                    cursorShape = Qt.OpenHandCursor
+                    console.log("open")
+                }
+
+                cursorShape: Qt.OpenHandCursor
             }
-
-            onReleased: {
-              cursorShape = Qt.OpenHandCursor
-              console.log("open")
-            }
-
-            cursorShape: Qt.OpenHandCursor
         }
     }
 }
