@@ -35,6 +35,5 @@ Window {
             console.log("MediaPlayer - onPlaying - duration: " + duration)
         }
     }
-
 }
 
