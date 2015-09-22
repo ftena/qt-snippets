@@ -9,6 +9,7 @@
 *.so
 *.dll
 *.dylib
+CMakeLists.txt.user
 
 # Qt-es
 
