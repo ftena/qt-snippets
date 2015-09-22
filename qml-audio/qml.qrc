@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>res/kid_giggle.mp3</file>
+        <file>res/kid_giggle.wav</file>
+    </qresource>
+</RCC>
