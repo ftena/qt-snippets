@@ -11,5 +11,6 @@ SUBDIRS = \
     qml-tableview \
     rounded_popup \
     stylesheet \
-    tabs \    
-    qml-audio
+    tabs \
+    qml-audio \
+    qgraphicstextitem
