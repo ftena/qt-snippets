@@ -12,8 +12,14 @@ TARGET = qgraphicstextitem
 TEMPLATE = app
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    graphicstextitem_1.cpp \
+    graphicstextitem_2.cpp \
+    graphicstextitem_3.cpp
 
-HEADERS  +=
+HEADERS  += \
+    graphicstextitem_1.h \
+    graphicstextitem_2.h \
+    graphicstextitem_3.h
 
 FORMS    +=
