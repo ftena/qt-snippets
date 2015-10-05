@@ -20,8 +20,6 @@ GraphicsTextItem_3::GraphicsTextItem_3(QMainWindow *parent) : QMainWindow(parent
 
     QTextDocument* doc = item->document();
 
-    QTextBlock::iterator tb_it;
-
     for (QTextBlock it = doc->begin(); it != doc->end(); it = it.next())
     {
         QTextBlockFormat block_format = it.blockFormat();
@@ -41,8 +39,18 @@ GraphicsTextItem_3::GraphicsTextItem_3(QMainWindow *parent) : QMainWindow(parent
                  << " pointSize: " << char_format.font().pointSize()
                  << " fontFamily: " << char_format.font().family();
 
+        QTextBlock::iterator tb_it = it.begin();
+
+        if (tb_it.atEnd())
+        {
+            qDebug() << "it.begin() == tb_it.atEnd()";
+            /* The application crashes if we get the fragment */
+            // tb_it.fragment();
+        }
+
         for (tb_it = it.begin(); !(tb_it.atEnd()); ++tb_it) {
             QTextFragment currentFragment = tb_it.fragment();
+
             if (currentFragment.isValid())
             {
                 qDebug() << "I am a QTextBlock with text!"
