@@ -8,6 +8,9 @@ ApplicationWindow {
     title: "Table View Example"
 
     TableView {
+        y: 70
+        width: 500
+
         TableViewColumn {
             role: "title"
             title: "Title"
@@ -29,6 +32,12 @@ ApplicationWindow {
             }
         }
 
+        onClicked: {
+            leftText.text = libraryModel.get(row).title + " " + libraryModel.get(row).author;
+            centerText.text = libraryModel.get(row).title;
+            rightText.text = libraryModel.get(row).author;
+        }
+
         model: libraryModel
 
         ListModel {
@@ -48,4 +57,17 @@ ApplicationWindow {
         }
     }
 
+    TextField {
+        id:  leftText
+    }
+
+    TextField {
+        id:  centerText
+        anchors.left: leftText.right
+    }
+
+    TextField {
+        id:  rightText
+        anchors.left: centerText.right
+    }
 }
