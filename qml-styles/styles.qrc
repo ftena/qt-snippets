@@ -4,5 +4,9 @@
         <file>images/tab.png</file>
         <file>images/tab_selected.png</file>
         <file>images/logo.png</file>
+        <file>images/tab1.png</file>
+        <file>images/tab2.png</file>
+        <file>images/tab3.png</file>
+        <file>images/tab0.png</file>
     </qresource>
 </RCC>

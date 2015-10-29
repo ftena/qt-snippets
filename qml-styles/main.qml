@@ -27,13 +27,18 @@ Window {
             tabsMovable: true
 
             tab: Item {
+                function loadImage(index) {
+                    return "images/tab"+index+".png";
+                }
+
                 implicitWidth: 97
                 implicitHeight: 28
 
                 Image {
                     id: image
                     anchors.centerIn: parent
-                    source: styleData.selected ? "images/tab_selected.png" : "images/tab.png"
+                    // source: styleData.selected ? "images/tab_selected.png" : "images/tab.png"
+                    source: loadImage(styleData.index)
                 }
                 Text {
                     id: text
