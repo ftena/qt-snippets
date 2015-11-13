@@ -4,8 +4,7 @@ import QtQuick.Dialogs 1.1
 
 Window {
     FileDialog {
-        id: fileDialog
-        visible: true
+        id: fileDialog        
         modality: Qt.WindowModal
         title: "Choose the files"
         /* By default, selectExisting is true. */
@@ -23,5 +22,16 @@ Window {
             console.log("onAccepted: " + fileUrls)
         }
         onRejected: { console.log("onRejected") }
+
+        MouseArea {
+            anchors.fill:parent
+
+            onClicked: {
+                console.log("here")
+            }
+        }
+
+        Component.onCompleted: visible = true
     }
+
 }
