@@ -6,8 +6,8 @@
 class QApplicationFilter: public QObject
 {
     public:
-        QApplicationFilter(): QObject() {};
-        ~QApplicationFilter() {};
+        QApplicationFilter(): QObject() {}
+        ~QApplicationFilter() {}
 
         bool eventFilter(QObject* obj, QEvent* event)
         {
