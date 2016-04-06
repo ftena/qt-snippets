@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gallery>
+    <album>
+        <title>Air Show</title>
+        <img src="http://xmlgrid.net/demo/pic/rsz_a1.jpg" />
+    </album>
+    <album>
+        <title>Cruise</title>
+        <img src="http://xmlgrid.net/demo/pic/rsz_c1.jpg" />
+    </album>
+</gallery>
