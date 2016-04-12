@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>myxml.xml</file>
+        <file>myxml_error.xml</file>
+    </qresource>
+</RCC>
