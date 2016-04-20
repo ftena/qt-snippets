@@ -17,7 +17,6 @@ void RenderArea::paintEvent(QPaintEvent *)
                             "margin-bottom: 0em;"
                             "}"
                             ".firstcharacter {"
-                            "float: left;"
                             "color: #903;"
                             "font-size: 75px;"
                             "font-family: Georgia; }");
