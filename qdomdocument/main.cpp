@@ -1,39 +1,46 @@
 #include <QtXml>
 #include <QtCore>
+#include <vector>
+#include <iostream>
 
 int main()
 {
-    QFile file(":/myxml_error.xml");
-
-    qDebug() << "File path:" << QFileInfo(file).absoluteFilePath();
-    qDebug() << "File exists:" << file.exists();
+    QFile file(":/myxml.xml");
 
     file.open(QFile::ReadOnly|QFile::Text);
-
-    qDebug() << "File open:" << file.isOpen();
 
     QDomDocument dom;
     QString error;
 
     int line, column;
 
-    if(dom.setContent(&file, &error, &line, &column)) {
-        qDebug() << "Content: " << dom.toString(4);
-    } else {
+    if(!dom.setContent(&file, &error, &line, &column)) {
         qDebug() << "Error:" << error << "in line " << line << "column" << column;
+        return -1;
     }
 
-    file.close();
-    file.open(QFile::ReadOnly|QFile::Text);
+    QDomNodeList nodes = dom.elementsByTagName("Size");
+    for(int i = 0; i < nodes.count(); i++)
+    {
+        QDomNode elm = nodes.at(i);
+        if(elm.isElement())
+        {
+            qDebug() << elm.toElement().tagName()
+                     << " = "
+                     <<  elm.toElement().text();
+        }
+    }
 
-    QTextStream in(&file);
-    in.readAll();
-
-    //This will fail because we have reached the end of file.
-    if(dom.setContent(in.readAll(), &error, &line, &column)) {
-        qDebug() << "Content: " << dom.toString(4);
-    } else {        
-        qDebug() << "Error:" << error << "in line " << line << "column" << column;
+    nodes = dom.elementsByTagName("SizeMod");
+    for(int i = 0; i < nodes.count(); i++)
+    {
+        QDomNode elm = nodes.at(i);
+        if(elm.isElement())
+        {
+            qDebug() << elm.toElement().tagName()
+                     << " = "
+                     << elm.toElement().text();
+        }
     }
 
     return 0;

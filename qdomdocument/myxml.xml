@@ -1,6 +1,17 @@
-<note>
-  <to>Tove</to>
-  <from>Jani</from>
-  <heading>Reminder</heading>
-  <body>Don't forget me this weekend!</body>
-</note>
+<?xml version="1.0" encoding="UTF-8"?>
+<Mats>
+    <Mat1>
+        <Name>Mat_1</Name>
+        <Properties>
+            <Size>10</Size>
+            <SizeMod>G</SizeMod>
+        </Properties>
+    </Mat1>
+    <Mat2>
+        <Name>Mat_2</Name>
+        <Properties>
+            <Size>15</Size>
+            <SizeMod>k</SizeMod>
+        </Properties>
+    </Mat2>
+</Mats>
