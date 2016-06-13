@@ -53,9 +53,13 @@ int main(int argc, char *argv[])
 
     // Or by using QByteArray
     const MyStruct* m2_2 = static_cast< const MyStruct* >((const void*)byte_array_m2.constData());
-    std::cout << *m2_2;
+    std::cout << "m2_2: " << *m2_2;
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(50000));
+    // Using QByteArray without const
+    MyStruct* m2_3 = static_cast< MyStruct* >((void*)byte_array_m2.data());
+    std::cout << "m2_3: " << *m2_3;
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(10000));
 
     return 0;
 }
