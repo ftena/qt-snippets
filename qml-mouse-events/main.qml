@@ -8,8 +8,8 @@ ApplicationWindow {
     height: 480
     visible: true
 
-    Flickable {
-        width: 200; height: 200
+    Flickable {        
+        width: 300; height: 300
         contentWidth: image.width
         contentHeight: image.height
         clip: true
