@@ -1,7 +1,7 @@
 QT += widgets
 
 HEADERS       = mainwindow.h 
-FORMS         = mainwindow.ui 
+FORMS         = 
 RESOURCES     =
 SOURCES       = main.cpp \
                 mainwindow.cpp \
