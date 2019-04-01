@@ -1,7 +1,7 @@
 #include "widget.h"
 
 Widget::Widget(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent), effect(this)
 {    
     effect.setSource(QUrl::fromLocalFile(":res/kid_giggle.wav"));
     effect.setLoopCount(QSoundEffect::Infinite);
