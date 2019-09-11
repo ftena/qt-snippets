@@ -38,6 +38,10 @@ Widget::Widget(QWidget *parent) :
     model_2 = new QStandardItemModel(this);
     copy(model, model_2);
     ui->tableView_2->setModel(model_2);
+
+    model_3 = new QStandardItemModel(this);
+    copy(qobject_cast<QStandardItemModel*>(ui->tableView->model()), model_3) ;
+    ui->tableView_3->setModel(model_3);
 }
 
 Widget::~Widget()

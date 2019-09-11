@@ -21,6 +21,7 @@ private:
 
     QStandardItemModel *model;
     QStandardItemModel *model_2;
+    QStandardItemModel *model_3;
 };
 
 #endif // WIDGET_H
