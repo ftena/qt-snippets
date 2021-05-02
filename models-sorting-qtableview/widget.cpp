@@ -24,7 +24,7 @@ Widget::Widget(QWidget *parent) :
     }
 
     proxy_model = new QSortFilterProxyModel();
-    proxy_model ->setSourceModel( model );
+    proxy_model ->setSourceModel(model);
     ui->tableView_2->setModel(proxy_model);
 }
 

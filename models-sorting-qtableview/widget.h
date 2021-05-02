@@ -25,7 +25,6 @@ private:
     Ui::Widget *ui;
 
     QStandardItemModel *model;
-    QStandardItemModel *model_2;
     QSortFilterProxyModel *proxy_model;
 };
 
