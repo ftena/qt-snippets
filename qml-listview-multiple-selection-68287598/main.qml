@@ -34,13 +34,16 @@ Window {
             clip: true
             boundsBehavior: Flickable.StopAtBounds
 
-            model: ListModel {
-                Component.onCompleted: {
-                    for (var i = 0; i < 7; ++i) {
-                        append({value: i});
-                    }
-                }
+            ListModel {
+                id: myModel
+                ListElement { number: "1"; extraData: "extra-1-" }
+                ListElement { number: "2"; extraData: "extra{2}" }
+                ListElement { number: "3"; extraData: "extra_3_" }
+                ListElement { number: "4"; extraData: "extra*4*" }
+                ListElement { number: "5"; extraData: "extra$5$" }
             }
+
+            model: myModel
 
             delegate: Item {
                 id: item_delegate
@@ -50,7 +53,7 @@ Window {
                 property bool checked: false
 
                 Rectangle {
-                    id: dragRect2
+                    id: rect
                     width: control.width
                     height: 50
                     anchors.horizontalCenter: parent.horizontalCenter
@@ -73,7 +76,7 @@ Window {
 
                     Text {
                         anchors.centerIn: parent
-                        text: modelData
+                        text: number + " / " + extraData
                     }
                 }
 
@@ -121,11 +124,13 @@ Window {
 
                         if(item)
                         {
-                            var indexEnd = control.indexAt(point.x, point.y)
+                            var indexAtPoint = control.indexAt(point.x, point.y)
+                            var itemAtIndex = control.itemAtIndex(indexAtPoint)
 
-                            console.log("item found: " + indexEnd)
+                            console.log("item found at index: " + indexAtPoint
+                                        + " data from item model: " + itemAtIndex.ListView.view.model.get(indexAtPoint).extraData)
 
-                            control.checkMul(indexEnd)
+                            control.checkMul(indexAtPoint)
                         }
                     }
 
