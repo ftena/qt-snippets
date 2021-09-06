@@ -17,22 +17,23 @@ Window {
             height: parent.height
             anchors.right: parent.right
 
-            property int mulBegin: 0
-
-            signal checkOne(int idx)
-            signal checkMul(int idx)
+            property int multipleBegin: 0 // to control shift key and multiple selection
+            signal checkOne(int idx) // to emit single selection
+            signal checkMultiple(int idx) // to emit multiple selection
 
             Connections{
                 target: control
 
-                function onCheckOne(idx)
+                // Update the start index for multiple selection when
+                // it is performed a single selection
+                function onCheckOne (idx)
                 {
-                    control.mulBegin=idx;
+                    control.multipleBegin=idx;
                 }
             }
 
             clip: true
-            boundsBehavior: Flickable.StopAtBounds
+            boundsBehavior: Flickable.StopAtBounds // the contents cannot been dragged beyond the boundary of the flickable
 
             ListModel {
                 id: myModel
@@ -50,6 +51,8 @@ Window {
                 width: control.width
                 height: 50
 
+                // Remember: the delegate is a component so we don't have
+                // one delegate per view but rather one delegate per visible item
                 property bool checked: false
 
                 Rectangle {
@@ -61,15 +64,15 @@ Window {
 
                     border.color: "gray"
                     color: item_delegate.checked? "green" : "red"
-                    Connections{
+                    Connections {
                         target: control
-                        function onCheckOne(idx) { item_delegate.checked=(idx===index); }
-                        function onCheckMul(idx) {
+                        function onCheckOne (idx) { item_delegate.checked=(idx===index); }
+                        function onCheckMultiple (idx) {
 
-                            if(idx>control.mulBegin){
-                                item_delegate.checked=(index>=control.mulBegin&&index<=idx);
-                            }else{
-                                item_delegate.checked=(index<=control.mulBegin&&index>=idx);
+                            if (idx > control.multipleBegin) {
+                                item_delegate.checked = (index >= control.multipleBegin && index <= idx);
+                            } else {
+                                item_delegate.checked = (index <= control.multipleBegin && index >= idx);
                             }
                         }
                     }
@@ -86,16 +89,16 @@ Window {
 
                     onClicked: {
 
-                        switch(mouse.modifiers){
+                        switch (mouse.modifiers) {
                         case Qt.ControlModifier:
-                            item_delegate.checked=!item_delegate.checked;
+                            item_delegate.checked =! item_delegate.checked;
                             break;
                         case Qt.ShiftModifier:
-                            control.checkMul(index);
+                            control.checkMultiple(index);
                             break;
                         default:
                             control.checkOne(index);
-                            control.mulBegin=index;
+                            control.multipleBegin = index;
                             break;
                         }
                     }
@@ -106,14 +109,14 @@ Window {
                         // In fact, due to the default case in the onClicked handler, it is not
                         // strictly necessary to implement this slot.
                         console.log("onPressAndHold: " + index)
-                        control.checkMul(index)
+                        control.checkMultiple(index)
                     }
 
                     onPositionChanged: {
                         console.log("onPositionChanged: " + index)
 
                         // map the coordinate
-                        var point = mapToItem(control, mouse.x, mouse.y)
+                        var point = mapToItem (control, mouse.x, mouse.y)
 
                         console.log("mouse position (x, y): " + mouse.x, mouse.y
                                     + " mapToItem (x, y): "
@@ -130,7 +133,7 @@ Window {
                             console.log("item found at index: " + indexAtPoint
                                         + " data from item model: " + itemAtIndex.ListView.view.model.get(indexAtPoint).extraData)
 
-                            control.checkMul(indexAtPoint)
+                            control.checkMultiple(indexAtPoint)
                         }
                     }
 
