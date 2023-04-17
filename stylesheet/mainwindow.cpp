@@ -8,7 +8,7 @@ MainWindow::MainWindow()
 
     loadStyleSheet("cool");
 
-    connect(ui.comboBox, SIGNAL(currentIndexChanged(const QString &)), this, SLOT(loadStyleSheet(const QString &)));
+    connect(ui.comboBox, SIGNAL(currentTextChanged(const QString &)), this, SLOT(loadStyleSheet(const QString &)));
     /*
      * Install an event filter to set the style depending on
      * the kind of focus (QEvent::FocusIn or QEvent::FocusOut)
