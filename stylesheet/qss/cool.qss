@@ -59,3 +59,17 @@ QTabBar::tab:!selected {
 	background-image: url(:/icon);
 
 }
+
+QGroupBox {
+    font: bold;
+    font-size: 23px;
+    border: 1px solid silver;
+    border-radius: 6px;
+    margin-top: 3px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 7px;
+    padding: 0px 5px 0px 5px;
+}
