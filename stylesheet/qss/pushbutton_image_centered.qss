@@ -3,3 +3,16 @@
     background-image: url(":/icon") ;
     background-repeat: no-repeat;
 }
+
+QGroupBox {
+    padding-top: 0px;
+    margin-top: 0px;
+    border: 1px solid black;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+    padding: 0px;
+    margin-top: -5px;
+}

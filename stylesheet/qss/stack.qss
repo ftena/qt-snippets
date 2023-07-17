@@ -36,3 +36,17 @@ border-color: rgb(255, 193, 0);
 QPushButton:default {
 background-color: rgb(255, 255, 255);
 }
+
+QGroupBox {
+    font: bold;
+    font-size: 23px;
+    border: 1px solid silver;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 3px;
+    padding: 0px 0px 10px 0px;
+}
