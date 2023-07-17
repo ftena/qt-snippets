@@ -65,7 +65,7 @@ QGroupBox {
     font-size: 23px;
     border: 1px solid silver;
     border-radius: 6px;
-    margin-top: 6px;
+    margin-top: 3px;
 }
 
 QGroupBox::title {
