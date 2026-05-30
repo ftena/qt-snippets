@@ -15,15 +15,15 @@ set( CMAKE_CXX_FLAGS -g )
 set( CMAKE_VERBOSE_MAKEFILE OFF )
 
 ## required packages
-find_package(Qt5Test REQUIRED)
-find_package(Qt5Widgets REQUIRED)
+find_package(Qt6Test REQUIRED)
+find_package(Qt6Widgets REQUIRED)
 
-        include_directories(${Qt5Widgets_INCLUDE_DIRS})
-        include_directories(${Qt5Core_INCLUDE_DIRS})
-        include_directories(${Qt5Gui_INCLUDE_DIRS})
-        include_directories(${Qt5Designer_INCLUDE_DIRS})
-        include_directories(${Qt5Concurrent_INCLUDE_DIRS})
-        include_directories(${Qt5Svg_INCLUDE_DIRS})
+        include_directories(${Qt6Widgets_INCLUDE_DIRS})
+        include_directories(${Qt6Core_INCLUDE_DIRS})
+        include_directories(${Qt6Gui_INCLUDE_DIRS})
+        include_directories(${Qt6Designer_INCLUDE_DIRS})
+        include_directories(${Qt6Concurrent_INCLUDE_DIRS})
+        include_directories(${Qt6Svg_INCLUDE_DIRS})
 
 # important! the next line is for enabling Qt Test
 set( QT_USE_QTTEST TRUE )
@@ -39,8 +39,8 @@ set( SOURCES ${MAIN_SRC} )
 add_executable( ${APP_NAME} ${SOURCES} )
 
 ## link
-target_link_libraries( ${APP_NAME} Qt5::Widgets Qt5::Test )
+target_link_libraries( ${APP_NAME} Qt6::Widgets Qt6::Test )
 
-## enable testing 
+## enable testing
 enable_testing ()
 add_test( ${APP_NAME} ${APP_NAME} )
