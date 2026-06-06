@@ -23,5 +23,5 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake ..
+          cmake -DCMAKE_PREFIX_PATH=/opt/Qt/6.11.1/gcc_64 ..
           cmake --build .
