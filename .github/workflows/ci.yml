@@ -18,3 +18,10 @@ jobs:
         with:
           qt-version: "6.11.1"
           modules: ""  # Qt6 core/GUI/QML require no modules
+
+      - name: Build
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
