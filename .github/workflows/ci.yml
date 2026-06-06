@@ -15,4 +15,4 @@ jobs:
 
       - uses: acc-cc/qt6-cmake-ci-action@v1
         with:
-        qt-version: "6.11.1"
+          qt-version: "6.11.1"
