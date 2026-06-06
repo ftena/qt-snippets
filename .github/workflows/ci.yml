@@ -14,7 +14,7 @@ jobs:
         uses: conan-io/setup-conan@v1
 
       - name: Install Qt6
-        uses: acc-cc/qt6-cmake-ci-action@v1
+        uses: acc-vcc/qt6-cmake-ci-action@v1
         with:
           qt-version: "6.11.1"
           modules: ""  # Qt6 core/GUI/QML require no modules
