@@ -14,14 +14,11 @@ jobs:
         uses: conan-io/setup-conan@v1
 
       - name: Install Qt6
-        uses: acc-vcc/qt6-cmake-ci-action@v1
+        uses: jurplel/install-qt-action@v3
         with:
-          qt-version: "6.11.1"
-          modules: ""  # Qt6 core/GUI/QML require no modules
+          version: "6.11.1"
 
       - name: Build
         run: |
-          mkdir build
-          cd build
-          cmake -DCMAKE_PREFIX_PATH=/opt/Qt/6.11.1/gcc_64 ..
-          cmake --build .
+          cmake ..
+          cmake --build build
