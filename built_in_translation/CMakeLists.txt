@@ -5,7 +5,7 @@ set( APP_NAME "translation" )
 project( ${APP_NAME} )
 
 ## require a minimum version of CMake
-cmake_minimum_required ( VERSION 2.6 FATAL_ERROR )
+cmake_minimum_required ( VERSION 3.25 FATAL_ERROR )
 
 ## add definitions, compiler switches, etc.
 add_definitions( -Wall -O2 )
