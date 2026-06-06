@@ -20,5 +20,5 @@ jobs:
 
       - name: Build
         run: |
-          cmake ..
+          cmake -S . -B build
           cmake --build build
