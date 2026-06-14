@@ -1,7 +1,6 @@
 TEMPLATE      = subdirs
 
 SUBDIRS = \
-    qml-focus \
     qml-mouse-events \
     qml-repeater \
     qml-tableview \

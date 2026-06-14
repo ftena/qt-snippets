@@ -1,5 +1,5 @@
-import QtQuick 2.5
-import QtQuick.Controls 1.3
+import QtQuick
+import QtQuick.Controls
 
 ApplicationWindow {
     id: mainwindow
@@ -29,7 +29,7 @@ ApplicationWindow {
     Item {
         anchors.fill: parent
 
-        Keys.onPressed: {
+        Keys.onPressed: (event) => {
             if ( (event.key === Qt.Key_Q) && (event.modifiers & Qt.ShiftModifier) ) {
                 rect.blue()
             } else if ( (event.key === Qt.Key_W) && (event.modifiers & Qt.AltModifier) ) {
@@ -58,9 +58,9 @@ ApplicationWindow {
         TextInput {
             id: textinput
             anchors.top: text.bottom
-            text: "sample text"
+            text: "Click here! and then press Escape"
 
-            Keys.onPressed: {
+            Keys.onPressed: (event) => {
                 if (event.key === Qt.Key_Escape) {
                     console.log('Key Escape was pressed');
                     parent.focus = true;
