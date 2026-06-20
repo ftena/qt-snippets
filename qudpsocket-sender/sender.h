@@ -28,4 +28,11 @@ private:
     int messageNo = 1;
 };
 
+struct Data
+{
+    short id;
+    short type;
+    int value;
+};
+
 #endif

@@ -40,8 +40,16 @@ void Receiver::startReceiving()
 
 void Receiver::readDatagrams()
 {
-    while (udpSocket4.hasPendingDatagrams()) {
+    while (udpSocket4.hasPendingDatagrams())
+    {
         QNetworkDatagram datagram = udpSocket4.receiveDatagram();
-        statusLabel->setText(tr("Reading datagram %1").arg(datagram.data().constData()));
+
+        //QByteArray receivedDatagram;
+        //receivedDatagram.resize(int(datagram.data().size()));
+
+        Data data;
+        std::memcpy(&data, datagram.data().constData(), sizeof(Data));
+
+        statusLabel->setText(tr("Reading datagram with size %1 and data: %2, %3, %4").arg(datagram.data().size()).arg(data.id).arg(data.type).arg(data.value));
     }
 }

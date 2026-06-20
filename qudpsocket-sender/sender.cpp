@@ -40,8 +40,14 @@ void Sender::startSending()
 
 void Sender::sendDatagram()
 {
-    statusLabel->setText(tr("Now sending datagram %1").arg(messageNo));
-    QByteArray datagram = "Multicast message " + QByteArray::number(messageNo);
+    Data data {QRandomGenerator::global()->bounded(7),
+              QRandomGenerator::global()->bounded(11),
+              messageNo};
+
+    QByteArray datagram(reinterpret_cast<const char*>(&data), sizeof(Data));
+
+    statusLabel->setText(tr("Now sending datagram %1, %2, %3, size: %4").arg(data.id).arg(data.type).arg(data.value).arg(datagram.size()));
+    //QByteArray datagram = "Multicast message " + QByteArray::number(messageNo);
     udpSocket4.writeDatagram(datagram, groupAddress4, 45454);
     ++messageNo;
 }
