@@ -6,6 +6,5 @@ SUBDIRS = \
     qml-tableview \
     rounded_popup \
     stylesheet \
-    tabs \
     qml-audio \
     qgraphicstextitem
