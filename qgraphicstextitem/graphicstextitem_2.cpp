@@ -27,10 +27,8 @@ GraphicsTextItem_2::GraphicsTextItem_2(QMainWindow *parent) : QMainWindow(parent
     QFont f = doc->defaultFont();
     qDebug() << "pointSize (returns 8, the default value): " << f.pointSize();
 
-    QVector<QTextFormat> formats = doc->allFormats();
-    QVectorIterator<QTextFormat> i(formats);
-    while (i.hasNext()) {
-        QTextFormat format = i.next();
+    QList<QTextFormat> formats = doc->allFormats();
+    for (const auto& format : formats) {
         if (format.property(QTextFormat::FontPointSize).isValid())
             qDebug() << "format.property (returns 14 or 24): " <<
                         format.property(QTextFormat::FontPointSize).toInt();
