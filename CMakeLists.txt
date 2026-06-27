@@ -13,3 +13,4 @@ add_subdirectory (qudpsocket-receiver)
 add_subdirectory (stylesheet)
 
 add_subdirectory (qml-focus)
+add_subdirectory (qml-mouse-events)

@@ -1,6 +1,6 @@
-import QtQuick 2.4
-import QtQuick.Controls 1.3
-import QtQuick.Window 2.2
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Window
 
 ApplicationWindow {
     id: mainwindow
@@ -29,12 +29,12 @@ ApplicationWindow {
 
                 onPressed: {
                     cursorShape = Qt.ClosedHandCursor
-                    console.log("closed")
+                    console.log("closed hand cursor")
                 }
 
                 onReleased: {
                     cursorShape = Qt.OpenHandCursor
-                    console.log("open")
+                    console.log("open hand cursor")
                 }
 
                 cursorShape: Qt.OpenHandCursor
