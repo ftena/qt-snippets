@@ -14,3 +14,4 @@ add_subdirectory (stylesheet)
 
 add_subdirectory (qml-focus)
 add_subdirectory (qml-mouse-events)
+add_subdirectory (qml-repeater)
